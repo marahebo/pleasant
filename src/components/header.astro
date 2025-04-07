@@ -1,0 +1,227 @@
+<header>
+  <nav class="nav-left">
+    <a href="#">Stories</a>
+    <a href="#">Hvorfor Pleasant?</a>
+    <a href="#">Gensalg</a>
+    <a href="#">Styleguide</a>
+    <a href="#">Forhandlere</a>
+  </nav>
+
+  <div class="logo">
+    <img src="/img/logo.webp" alt="Pleasant logo" />
+  </div>
+
+  <div class="nav-right">
+    <a
+      href="https://www.facebook.com/makelifepleasant"
+      target="_blank"
+      rel="noopener"
+    >
+      <img src="/img/facebookheader.webp" alt="Facebook" />
+    </a>
+    <a
+      href="https://www.instagram.com/makelifepleasant/"
+      target="_blank"
+      rel="noopener"
+    >
+      <img src="/img/instaheader.webp" alt="Instagram" />
+    </a>
+    <a
+      href="https://www.tiktok.com/@makelifepleasant"
+      target="_blank"
+      rel="noopener"
+    >
+      <img src="/img/tiktokheader.webp" alt="TikTok" />
+    </a>
+  </div>
+</header>
+
+<div class="dropdown-container">
+  <div class="dropdown">
+    <button>
+      Kasketter <span class="arrow">⌵</span>
+    </button>
+    <div class="dropdown-content">
+      <a href="#"><strong>Kasketter</strong></a>
+      <a href="#">Mest populære</a>
+      <a href="#"><strong>Bøllehatte</strong></a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button>
+      Tøj <span class="arrow">⌵</span>
+    </button>
+    <div class="dropdown-content">
+      <a href="#"><strong>Skjorter</strong></a>
+      <a href="#"><strong>Overdele</strong></a>
+      <a href="#"><strong>Sæt</strong></a>
+      <a href="#"><strong>Shorts</strong></a>
+      <a href="#"><strong>Accesories</strong></a>
+      <a href="#"><strong>Udsalg</strong></a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button>
+      Livsstil <span class="arrow">⌵</span>
+    </button>
+    <div class="dropdown-content">
+      <a href="#"><strong>Artworks</strong></a>
+      <a href="#"><strong>Surfing</strong></a>
+      <a href="#"><strong>Tøjreperation</strong></a>
+      <a href="#"><strong>Re-zip emballage</strong></a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button>
+      Drops <span class="arrow">⌵</span>
+    </button>
+    <div class="dropdown-content">
+      <a href="#"><strong>Ride the wave</strong></a>
+      <a href="#"><strong>90's optimism</strong></a>
+      <a href="#"><strong>Take a break</strong></a>
+      <a href="#"><strong>Dream studio</strong></a>
+    </div>
+  </div>
+</div>
+
+<style>
+  header {
+    background: var(--color-bg, #f2e7c4);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-bottom: 3rem;
+  }
+
+  .nav-left,
+  .nav-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 55px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .nav-right img {
+    width: 25px;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-container {
+    display: flex;
+    background-color: var(--color-blue, #d0e0ff);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .dropdown {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid black;
+  }
+
+  .dropdown:last-child {
+    border-right: none;
+  }
+
+  .dropdown button {
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: "JejuMyeongjo", serif;
+  }
+
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height 0.4s ease,
+      opacity 0.4s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-blue, #d0e0ff);
+    z-index: 10;
+    border-inline: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .dropdown.open .dropdown-content {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+  }
+
+  .dropdown-content a:hover {
+    background-color: var(--color-blue, #c0d8ff);
+  }
+
+  .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown.open .arrow {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    dropdowns.forEach((dropdown) => {
+      const button = dropdown.querySelector("button");
+
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const isOpen = dropdown.classList.contains("open");
+
+        dropdowns.forEach((d) => d.classList.remove("open"));
+
+        if (!isOpen) {
+          dropdown.classList.add("open");
+        }
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".dropdown")) {
+        dropdowns.forEach((d) => d.classList.remove("open"));
+      }
+    });
+  });
+</script>
