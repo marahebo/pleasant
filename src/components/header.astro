@@ -195,8 +195,12 @@
 </section>
 
 <style>
+  :root {
+    --color-bg: #f3f0e8;
+    --color-blue: #9dcde3;
+  }
   header {
-    background: var(--color-bg, #f2e7c4);
+    background: var(--color-bg);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -236,16 +240,13 @@
 
   .dropdown-container {
     display: flex;
-    background-color: var(--color-blue, #d0e0ff);
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    background-color: var(--color-bg);
   }
 
   .dropdown {
     position: relative;
     flex: 1;
     text-align: center;
-    border-right: 1px solid black;
   }
 
   .dropdown:last-child {
@@ -272,9 +273,8 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: var(--color-blue, #d0e0ff);
+    background-color: var(--color-bg);
     z-index: 10;
-    border-bottom: 1px solid black;
   }
 
   .dropdown.open .dropdown-content {
@@ -291,7 +291,7 @@
   }
 
   .dropdown-content a:hover {
-    background-color: var(--color-blue, #c0d8ff);
+    background-color: var(--color-bg);
   }
 
   .arrow {
@@ -345,7 +345,6 @@
 
     .mobil {
       display: block;
-      border-bottom: 1px solid black;
     }
 
     .dropdown-container {
@@ -397,7 +396,7 @@
       cursor: pointer;
       background: none;
       border: none;
-      color: #96cbd9;
+      color: var(--color-blue);
     }
 
     /* Centering the logo */
@@ -419,6 +418,8 @@
       top: 5.8rem; /* Adjust based on header height */
       left: 0;
       width: 100%;
+      background-color: var(--color-blue);
+      padding-bottom: 2rem;
     }
 
     /* When menu is active (visible) */
