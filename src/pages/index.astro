@@ -5,4 +5,20 @@ import Header from "../components/header.astro";
 
 <Layout>
   <Header />
+  <img src="/img/hero.webp" class="hero-img" alt="Hero image" />
 </Layout>
+
+<style>
+  /* In your global CSS or component style tag */
+  .hero-img {
+    width: 100%; /* Keep full width */
+    height: 580px; /* Adjust height as you like */
+    object-fit: cover; /* Crop the image to fill height */
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .hero-img {
+      height: auto;
+    }
+  }
+</style>
