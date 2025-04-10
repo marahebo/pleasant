@@ -1,0 +1,198 @@
+<article class="footer">
+  <section class="footer_grid">
+    <div>
+      <img src="/img/logo.webp" alt="footer logo" class="footerlogo" />
+      <p>
+        Pleasant er et tøjmærke, der upcycler og lavet nyt tøj af brugt tekstil. <br
+        /> God Stil. God Savmittighed
+      </p>
+      <p>
+        webshop@pleasant.dk <br />Svartid 1-2 hverdage <br />CVR-nr:42943274
+      </p>
+    </div>
+    <hr class="line" />
+    <hr class="line" />
+    <div>
+      <!-- LINKS TIL MOBIL (dropdown) -->
+      <div class="links-mobil">
+        <div class="dropdown-toggle">
+          <button class="dropdown-toggle">LINKS</button>
+        </div>
+        <div class="dropdown-menu">
+          <p>Style guide</p>
+          <p>Community</p>
+          <p>Forhandlere</p>
+          <p>Kontakt</p>
+          <p>Returportal</p>
+          <p>Handelsbetingelser</p>
+          <p>Privatlivspolitik (GDPR)</p>
+        </div>
+      </div>
+
+      <!-- LINKS TIL DESKTOP (altid synlig) -->
+      <div class="links-desktop">
+        <p class="community">LINKS</p>
+        <p>Style guide</p>
+        <p>Community</p>
+        <p>Forhandlere</p>
+        <p>Kontakt</p>
+        <p>Returportal</p>
+        <p>Handelsbetingelser</p>
+        <p>Privatlivspolitik (GDPR)</p>
+      </div>
+    </div>
+    <hr class="line" />
+    <div>
+      <p class="community">PLEASANT COMMUNITY</p>
+      <div class="newsletter">
+        <input type="email" id="email" placeholder="Email" />
+        <button>TILMELD</button>
+      </div>
+      <hr class="underline" />
+      <div class="socials">
+        <img src="/img/facebookheader.webp" alt="facebook footer" />
+        <img src="/img/instaheader.webp" alt=" instagram footer" />
+        <img src="/img/tiktokheader.webp" alt="tiktok footer" />
+      </div>
+    </div>
+  </section>
+  <br />
+  <br />
+  <br />
+  <br />
+  <p class="copyright">Copyright © 2025, Pleasant.</p>
+</article>
+
+<style>
+  .footer {
+    background-color: #000000;
+    color: #b3adad;
+    padding: 2rem;
+  }
+  .footerlogo,
+  .socials img {
+    filter: brightness(0) invert(1);
+  }
+
+  .footerlogo {
+    width: 40%;
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  .line {
+    border: none;
+    height: 0.5px;
+    background-color: #4b4848;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .links-desktop {
+    display: none;
+  }
+
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    color: #eceaea;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .community{color: #eceaea;}
+
+  .dropdown-menu {
+    flex-direction: column;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    display: flex;
+  }
+
+  .dropdown-menu.open {
+    max-height: 400px;
+  }
+
+  .newsletter {
+    display: flex;
+    align-items: center;
+    color: #b3adad;
+    padding-top: 2rem;
+  }
+
+  .newsletter input {
+    background: transparent;
+    border: none;
+    border-bottom: 1 px solid #4b4848;
+    color: #b3adad;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+
+  .newsletter input::placeholder {
+    color: #b3adad;
+  }
+  .newsletter input:focus {
+    outline: none;
+  }
+
+  .newsletter button {
+    background: none;
+    border: none;
+    color: #b3adad;
+    cursor: pointer;
+  }
+
+  .underline {
+    border: none;
+    height: 2px;
+    background-color: #b3adad;
+  }
+
+  .socials img {
+    width: 5%;
+    margin-right: 1rem;
+    padding-top: 1rem;
+    max-width: 40px;
+  }
+
+  .copyright {
+    font-size: 15px;
+  }
+
+  @media (min-width: 769px) {
+    .footer {
+      padding: 5rem;
+    }
+    .footer_grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+<    }
+
+    .line {
+      display: none;
+    }
+
+    .links-desktop {
+      display: block;
+    }
+    .links-mobil {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const toggleBtn = document.querySelector(".dropdown-toggle") as HTMLElement;
+  const dropdown = document.querySelector(".dropdown-menu") as HTMLElement;
+
+  if (toggleBtn && dropdown) {
+    toggleBtn.addEventListener("click", () => {
+      dropdown.classList.toggle("open");
+    });
+  }
+</script>
