@@ -5,6 +5,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--color-bg);
 }
 
 html,
@@ -17,4 +18,5 @@ button {
 :root {
   --color-bg: #f3f0e8;
   --color-blue: #9dcde3;
+  --color-yellow: #fceb86;
 }
