@@ -1,0 +1,10 @@
+---
+const { product } = Astro.props;
+---
+
+<article>
+  <h2>{product.name}</h2>
+  <p>{product.price}</p>
+  <img src={product.image} alt="product image" />
+  <img src={product.image2} alt="product image2" />
+</article>
