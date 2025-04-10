@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
 import Heroimg from "../components/heroimg.astro";
 import Productcardliste from "../components/productcardliste.astro";
+import Footer from "../components/footer.astro";
 
 const curl =
   "https://sfmqbipvztwmykdsygxb.supabase.co/rest/v1/products?select=*";
@@ -18,7 +19,14 @@ console.log(data);
 ---
 
 <Layout>
-  <Header />
-  <Heroimg />
-  {data.map((product) => <Productcardliste {product} />)}
+  <header>
+    <Header />
+    <Heroimg />
+  </header>
+  <main>
+    {data.map((product) => <Productcardliste {product} />)}
+  </main>
+  <footer>
+    <Footer />
+  </footer>
 </Layout>

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
 import Productcard from "../components/productcard.astro";
+import Footer from "../components/footer.astro";
 
 const curl =
   "https://sfmqbipvztwmykdsygxb.supabase.co/rest/v1/products?select=*";
@@ -19,4 +20,5 @@ console.log(data);
 <Layout>
   <Header />
   {data.map((product) => <Productcard {product} />)}
+  <Footer />
 </Layout>
