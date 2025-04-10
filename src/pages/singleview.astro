@@ -1,4 +1,8 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Productcard from "../components/productcard.astro";
+
 const curl =
   "https://sfmqbipvztwmykdsygxb.supabase.co/rest/v1/products?select=*";
 const apikey =
@@ -10,18 +14,9 @@ const options = {
 
 const data = await fetch(curl, options).then((response) => response.json());
 console.log(data);
-const { product } = Astro.props;
 ---
 
-<article>
-  <h2>{product.name}</h2>
-  <p>{product.price}</p>
-  <img src={product.image} alt="product image" />
-  <img src={product.image2} alt="product image2" />
-</article>
-
-<style>
-  img {
-    width: 100%;
-  }
-</style>
+<Layout>
+  <Header />
+  {data.map((product) => <Productcard {product} />)}
+</Layout>

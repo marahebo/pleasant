@@ -101,9 +101,7 @@
     </div>
     <div class="burger-menu">
       <button class="burger-icon">&#9776;</button>
-      <!-- Burger icon (hamburger) -->
     </div>
-    <!-- Hidden menu that will show when burger menu is clicked -->
     <div class="menu" id="menu">
       <div class="dropdown-container">
         <div class="dropdown">
@@ -156,7 +154,6 @@
         </div>
       </div>
 
-      <!-- Main Navigation -->
       <nav class="nav-left">
         <a href="#">Stories</a>
         <a href="#">Hvorfor Pleasant?</a>
@@ -165,7 +162,6 @@
         <a href="#">Forhandlere</a>
       </nav>
 
-      <!-- Social Media Links -->
       <div class="nav-right">
         <a
           href="https://www.facebook.com/makelifepleasant"
@@ -314,11 +310,6 @@
       display: block;
     }
 
-    /* .logo {
-      position: fixed;
-      padding-top: 5rem;
-    } */
-
     .logo {
       position: relative;
       left: 0;
@@ -376,7 +367,6 @@
     .mobil {
       display: block;
     }
-    /* Mobile layout */
     .mobil header {
       display: flex;
       justify-content: center;
@@ -385,7 +375,6 @@
       padding: 25px;
     }
 
-    /* Burger menu on the left */
     .burger-menu {
       position: absolute;
       left: 10px;
@@ -398,13 +387,6 @@
       border: none;
       color: var(--color-blue);
     }
-
-    /* Centering the logo */
-    /* .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    } */
 
     .logo img {
       max-width: 100%;
@@ -453,9 +435,8 @@
       }
     });
   });
-  // JavaScript to toggle the menu visibility
   document.querySelector(".burger-icon").addEventListener("click", function () {
     const menu = document.getElementById("menu");
-    menu.classList.toggle("active"); // Toggle 'active' class to show/hide the menu
+    menu.classList.toggle("active");
   });
 </script>

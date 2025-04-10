@@ -1,0 +1,20 @@
+@import url(https://db.onlinewebfonts.com/c/1a5c2d8bbd4e28d99a6efcbb9a5b378f?family=JejuMyeongjo);
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html,
+body,
+a,
+button {
+  font-family: "JejuMyeongjo";
+}
+
+:root {
+  --color-bg: #f3f0e8;
+  --color-blue: #9dcde3;
+}
