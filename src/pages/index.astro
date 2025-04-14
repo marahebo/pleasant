@@ -4,6 +4,7 @@ import Header from "../components/header.astro";
 import Heroimg from "../components/heroimg.astro";
 import Productcardliste from "../components/productcardliste.astro";
 import Footer from "../components/footer.astro";
+import InstaFeed from "../components/instagram.astro";
 
 const curl =
   "https://sfmqbipvztwmykdsygxb.supabase.co/rest/v1/products?select=*";
@@ -24,6 +25,7 @@ console.log(data);
     <Heroimg />
   </header>
   <main>
+    <InstaFeed />
     <Productcardliste products={data} />
   </main>
   <footer>
