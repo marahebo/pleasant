@@ -1,0 +1,27 @@
+---
+const { embedUrl } = Astro.props;
+---
+
+<div class="insta-post">
+  <iframe src={embedUrl} frameborder="0" scrolling="no"> </iframe>
+</div>
+
+<style>
+  .insta-post iframe {
+    aspect-ratio: 5 / 9.1;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid black;
+    transition: transform 0.2s ease;
+  }
+
+  .insta-post iframe:hover {
+    transform: translateY(-10px);
+  }
+
+  .insta-post {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+  }
+</style>

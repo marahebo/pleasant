@@ -1,0 +1,105 @@
+---
+import InstaPost from "../components/instagrampost.astro";
+import Socials from "../components/socials.astro";
+---
+
+<section>
+  <div class="header">
+    <h2>Thy</h2>
+    <p>(og os)</p>
+    <h2>set fra den bedste vinkel</h2>
+  </div>
+  <div class="insta-grid">
+    <InstaPost embedUrl="https://www.instagram.com/reel/DIbP4KYutro/embed" />
+    <InstaPost embedUrl="https://www.instagram.com/reel/DIbHz5xofXB/embed" />
+    <InstaPost embedUrl="https://www.instagram.com/p/DIbEgkHI0Pw/embed" />
+  </div>
+
+  <div class="socials">
+    <Socials
+      href="https://www.facebook.com/makelifepleasant/"
+      alt="Facebook"
+      src="/img/facebookheader.webp"
+    />
+    <Socials
+      href="https://www.instagram.com/makelifepleasant/"
+      alt="Instagram"
+      src="/img/instaheader.webp"
+    />
+    <Socials
+      href="https://www.tiktok.com/@makelifepleasant"
+      alt="TikTok"
+      src="/img/tiktokheader.webp"
+    />
+  </div>
+</section>
+
+<style>
+  section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .header h2 {
+    font-size: 2.5vw;
+    font-weight: 1000;
+  }
+
+  .header p {
+    color: #1f5da6;
+    font-size: 1.04vw;
+  }
+
+  .socials {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .insta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3vw;
+    padding-bottom: 3vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .header h2 {
+      font-size: 20px;
+    }
+    .header p {
+      font-size: 12px;
+    }
+
+    .insta-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      gap: 5rem;
+      -webkit-overflow-scrolling: touch;
+      padding-left: calc(50% - 150px);
+      padding-right: calc(50% - 150px);
+    }
+
+    /* :global(div) er en speciel syntax der giver dig mulighed for at ramme elementer, der normalt ville være indkapslet i komponenter eller som er dynamisk renderet */
+    .insta-grid :global(div) {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+    }
+  }
+</style>
