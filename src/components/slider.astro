@@ -1,0 +1,51 @@
+<section class="slider">
+  <div class="sliding-text">
+    <p>
+      Make life pleasant &nbsp; • &nbsp; Tænk dig til Thy &nbsp; • &nbsp; Make life pleasant &nbsp; • &nbsp; Tænk dig til Thy &nbsp; • &nbsp; Make life pleasant &nbsp; • &nbsp; Tænk dig til Thy &nbsp; • &nbsp; Make life pleasant &nbsp; • &nbsp; Tænk
+      dig til Thy
+    </p>
+    <p>
+      Make life pleasant &nbsp; • &nbsp; Tænk dig til Thy &nbsp; • &nbsp; Make life pleasant &nbsp; • &nbsp; Tænk dig til Thy &nbsp; • &nbsp; Make life pleasant &nbsp; • &nbsp; Tænk dig til Thy &nbsp; • &nbsp; Make life pleasant &nbsp; • &nbsp; Tænk
+      dig til Thy
+    </p>
+  </div>
+</section>
+
+<style>
+  .slider {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    background-color: #1f5da6; /* Blue background */
+    padding: 1rem 0;
+    margin-top: 6vw;
+  }
+
+  .sliding-text {
+    display: flex; /* Use flexbox for seamless scrolling */
+    animation: slide 15s linear infinite; /* Adjust duration for speed */
+  }
+
+  .sliding-text p {
+    display: inline-block;
+    font-size: 3vw;
+    font-weight: bold;
+    color: #ffffff; /* White text for contrast */
+    margin: 0;
+    padding-right: 2rem; /* Add spacing between repeated text */
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .sliding-text p {
+      font-size: 1.5vw; /* Adjust font size for smaller screens */
+    }
+  }
+</style>
