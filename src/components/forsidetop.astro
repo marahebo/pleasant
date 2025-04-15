@@ -1,0 +1,67 @@
+<section>
+  <div class="billede">
+    <img src="../../public/img/thysplit.webp" alt="billeder af thy" />
+  </div>
+  <div class="tekst">
+    <h2>Ro, Åndehul og Natur</h2>
+    <p>Alle elsker Thy - ifølge os, men lad os vise dig hvad Thy kan, i stedet for bare at tale om det. Denne kampagne sætter fokus på Thy som samfund, naturområde og menneskerne der skaber Thy. Hvor fedt er det ikke lige!</p>
+    <p><span class="blue">Tænk dig til Thy</span> med Pleasant</p>
+  </div>
+</section>
+
+<style>
+  .blue {
+    color: #1f5da6;
+    font-weight: bold;
+  }
+  .billede {
+    text-align: center;
+    margin-top: 6vw;
+  }
+  .billede img {
+    width: 80%;
+    height: auto;
+  }
+  .tekst {
+    margin-left: 7vw;
+    margin-right: 4vw;
+  }
+  .tekst p {
+    margin-left: 2vw;
+    line-height: 4vw;
+  }
+  @media screen and (min-width: 768px) {
+    .billede img {
+      width: 60%;
+      height: auto;
+      margin-left: 0;
+    }
+    .billede {
+      margin-left: 8vw;
+      text-align: left;
+      grid-column: 1 / span 3;
+    }
+    .tekst {
+      margin-left: 2vw;
+      margin-right: 2vw;
+      grid-column: 2 / span 2;
+    }
+    .tekst p {
+      line-height: 3vw;
+      font-size: 1.3vw;
+      margin-right: 5vw;
+      margin-left: 4vw;
+    }
+    .tekst h2 {
+      font-size: 2.5vw;
+      font-weight: bold;
+      margin-top: 0;
+      margin-left: 3vw;
+    }
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 3vw;
+    }
+  }
+</style>
