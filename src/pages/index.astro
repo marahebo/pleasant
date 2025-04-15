@@ -5,11 +5,9 @@ import Heroimg from "../components/heroimg.astro";
 import Productcardliste from "../components/productcardliste.astro";
 import Footer from "../components/footer.astro";
 import InstaFeed from "../components/instagram.astro";
-
-const curl =
-  "https://sfmqbipvztwmykdsygxb.supabase.co/rest/v1/products?select=*";
-const apikey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmbXFiaXB2enR3bXlrZHN5Z3hiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjgzMjcsImV4cCI6MjA1OTg0NDMyN30.0HEP6nkoSRfWQBC-P1LtCYh1a8pwIoZoRvlJd6v6IpM";
+import ForsideTop from "../components/forsidetop.astro";
+const curl = "https://sfmqbipvztwmykdsygxb.supabase.co/rest/v1/products?select=*";
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmbXFiaXB2enR3bXlrZHN5Z3hiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjgzMjcsImV4cCI6MjA1OTg0NDMyN30.0HEP6nkoSRfWQBC-P1LtCYh1a8pwIoZoRvlJd6v6IpM";
 
 const options = {
   headers: { apikey: apikey },
@@ -25,6 +23,7 @@ console.log(data);
     <Heroimg />
   </header>
   <main>
+    <ForsideTop />
     <InstaFeed />
     <Productcardliste products={data} />
   </main>
