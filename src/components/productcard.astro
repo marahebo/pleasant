@@ -10,9 +10,6 @@ const options = {
 
 const data = await fetch(curl, options).then((res) => res.json());
 const product = data[0];
-// const data = await fetch(curl, options).then((response) => response.json());
-// console.log(data);
-// const { product } = Astro.props;
 ---
 
 <article>
@@ -33,10 +30,10 @@ const product = data[0];
       </div>
 
       <section class="ikoner">
-        <p><img src="img/ikon1.webp" alt="" /> Unik og komfortabel.</p>
-        <p><img src="img/ikon2.webp" alt="" /> Minimal miljøpåvirkning</p>
-        <p><img src="img/ikon3.webp" alt="" /> Mindre spild. Mere natur.</p>
-        <p><img src="img/ikon4.webp" alt="" /> Dit valg gør en forskel.</p>
+        <p><img src="/img/ikon1.webp" alt="" /> Unik og komfortabel.</p>
+        <p><img src="/img/ikon2.webp" alt="" /> Minimal miljøpåvirkning</p>
+        <p><img src="/img/ikon3.webp" alt="" /> Mindre spild. Mere natur.</p>
+        <p><img src="/img/ikon4.webp" alt="" /> Dit valg gør en forskel.</p>
       </section>
 
       <section class="størrelse">
@@ -143,7 +140,7 @@ const product = data[0];
     gap: 1rem;
   }
   .ikoner {
-    padding-left: 7rem;
+    padding-left: none;
     padding-bottom: 2rem;
   }
 
@@ -206,6 +203,9 @@ const product = data[0];
       gap: 2rem;
       max-width: 1200px;
       margin: auto;
+    }
+    .ikoner {
+      padding-left: 7rem;
     }
   }
 </style>
