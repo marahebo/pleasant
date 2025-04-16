@@ -48,28 +48,9 @@
     margin-top: 4vw;
   }
 
-  @media screen and (max-width: 768px) {
-    section {
-      display: block; /* Switch to block layout on mobile */
-      padding-bottom: 3vw;
-      padding-top: 3vw;
-    }
-
-    .tekst {
-      margin-left: 0; /* Adjust margins for mobile */
-      margin-right: 0;
-    }
-
-    img {
-      margin: 0 auto; /* Center the image on mobile */
-      display: block;
-      width: 90%; /* Adjust image size for mobile */
-    }
-  }
-
   p {
     color: white;
-    line-height: 9vw;
+    line-height: 2vw;
     margin-left: 4vw;
   }
 
@@ -90,5 +71,26 @@
     width: 90%;
     height: auto;
     margin-top: 2vw;
+  }
+  @media screen and (max-width: 768px) {
+    section {
+      display: block; /* Switch to block layout on mobile */
+      padding-bottom: 3vw;
+      padding-top: 3vw;
+    }
+
+    .tekst {
+      margin-left: 0; /* Adjust margins for mobile */
+      margin-right: 0;
+    }
+
+    img {
+      margin: 0 auto; /* Center the image on mobile */
+      display: block;
+      width: 90%; /* Adjust image size for mobile */
+    }
+    p {
+      line-height: 6vw;
+    }
   }
 </style>
