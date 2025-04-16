@@ -8,20 +8,204 @@ const options = {
   headers: { apikey: apikey },
 };
 
-const data = await fetch(curl, options).then((response) => response.json());
-console.log(data);
-const { product } = Astro.props;
+const data = await fetch(curl, options).then((res) => res.json());
+const product = data[0];
+// const data = await fetch(curl, options).then((response) => response.json());
+// console.log(data);
+// const { product } = Astro.props;
 ---
 
 <article>
-  <h2>{product.name}</h2>
-  <p>{product.price}</p>
-  <img src={product.image} alt="product image" />
-  <img src={product.image2} alt="product image2" />
+  <section class="grid_1-1">
+    <div class="image-side">
+      <img id="mainImage" src={product.image} alt="product image" />
+
+      <div class="thumbnails">
+        <img src={product.image} alt="Thumbnail 1" class="thumbnail" />
+        <img src={product.image2} alt="Thumbnail 2" class="thumbnail" />
+      </div>
+    </div>
+    <div class="content-side">
+      <h2>{product.name}</h2>
+      <div class="pris">
+        <p class="blåtekst">Ny kasket af brugt tekstil</p>
+        <p>{product.price} kr</p>
+      </div>
+
+      <section class="ikoner">
+        <p><img src="img/ikon1.webp" alt="" /> Unik og komfortabel.</p>
+        <p><img src="img/ikon2.webp" alt="" /> Minimal miljøpåvirkning</p>
+        <p><img src="img/ikon3.webp" alt="" /> Mindre spild. Mere natur.</p>
+        <p><img src="img/ikon4.webp" alt="" /> Dit valg gør en forskel.</p>
+      </section>
+
+      <section class="størrelse">
+        <p>XS</p>
+        <p>S</p>
+        <p>M</p>
+        <p>L</p>
+        <p>XL</p>
+      </section>
+      <div class="button_container">
+        <p class="button">Tilføj til kurv</p>
+      </div>
+      <hr />
+      <p class="tekst">
+        Denne miljøvenlige upcycled Pleasant er kasket skabt af nøje udvalgt
+        brugt tekstil. Kasketten er one size og passer de fleste. Justerbar
+        velcro lukning bagpå. <br /><br /> Vær opmærksom på, at hver kasket er unik
+        og kan variere en smule fra billederne. <br /><br />Produceret i Europa <br
+        /><br /> Et slow fashion alternativ til <strong>fast</strong> fashion.
+      </p>
+    </div>
+  </section>
 </article>
 
+<!-- Interactivity -->
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const mainImage = document.querySelector("#mainImage");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        mainImage.src = thumb.src;
+      });
+    });
+  });
+</script>
+
 <style>
-  img {
+  article {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  #mainImage {
     width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    margin-top: 1rem;
+  }
+
+  .thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border 0.2s ease;
+  }
+
+  .thumbnail:hover {
+    border: 2px solid #1f5da6;
+  }
+
+  h2,
+  p {
+    padding-left: 1rem;
+  }
+
+  h2 {
+    font-size: 27px;
+    padding-top: 1rem;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .blåtekst {
+    font-weight: 500;
+    color: #1f5da6;
+  }
+  .pris {
+    display: flex;
+    padding-bottom: 2rem;
+  }
+  .ikoner img {
+    width: 25px;
+  }
+
+  .ikoner p {
+    font-size: 15px;
+    padding-top: 1rem;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+  .ikoner {
+    padding-left: 7rem;
+    padding-bottom: 2rem;
+  }
+
+  .størrelse {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding-bottom: 1rem;
+  }
+
+  .størrelse p {
+    border: solid black 1px;
+    justify-content: center;
+    padding-inline: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  .størrelse p:hover {
+    background-color: #9dcde3;
+  }
+
+  .button {
+    background-color: #fceb86;
+    border: solid 1px black;
+    border-radius: 12px;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #f9e368;
+  }
+
+  .button_container {
+    padding-inline: 5rem;
+    padding-bottom: 2rem;
+  }
+
+  hr {
+    margin-inline: 2rem;
+  }
+  .tekst {
+    padding-top: 3rem;
+    line-height: 2.5rem;
+    padding-inline: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
   }
 </style>

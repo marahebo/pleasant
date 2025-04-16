@@ -1,0 +1,87 @@
+---
+import Slider2 from "./slider2.astro";
+---
+
+<article>
+  <Slider2 />
+  <section class="info_container">
+    <h1 class="overskrift">Hvorfor skal du vælge Pleasant</h1>
+    <h2 class="underoverskrift">Her er 3 gode grunde</h2>
+    <section class="desktop">
+      <div>
+        <h3>1. Tøj med god samvittighed</h3>
+        <p>
+          Vi har taget en sund beslutning om ikke længere at købe nyt tekstil.
+          Det har vi ikke gjort siden 2021. Vi upcycler og laver tøj af
+          genbrugstekstil. Det er en kæmpe miljøbesparelse, der giver os en god
+          samvittighed vi gerne vil dele ud af.
+        </p>
+      </div>
+      <div>
+        <h3>2. Minimer CO2 udledningen</h3>
+        <p>
+          Størstedelen af et stykke tøjs CO2 aftryk ligger i
+          materialefremstillingen. Ved at anvende tekstil, der allerede findes i
+          forvejen rammer vi et CO2 aftryk, der sammenlignet med et
+          konventionelt produkt, er min. 4 gange så lavt. Dette er på trods af,
+          at vores varer skal fragtes både fra Danmark til vores
+          produktionslande og retur.
+        </p>
+      </div>
+      <div>
+        <h3>3. Unika produkter</h3>
+        <p>
+          Vi designer tøj ud fra hvad vi finder af genbrugstekstiler, og
+          materialerne er derfor naturligt begrænset. Det resultere i vidt
+          forskellige produkter og ikke særligt mange af hver.
+        </p>
+      </div>
+    </section>
+  </section>
+</article>
+
+<style>
+  article {
+    background-color: #1f5da6;
+  }
+
+  .info_container {
+    padding-inline: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  h1,
+  h2 {
+    color: #fceb86;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p,
+  h3 {
+    color: white;
+    line-height: 1.9rem;
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    padding-top: 2rem;
+  }
+  @media (min-width: 1068px) {
+    .desktop {
+      display: flex;
+      gap: 4rem;
+    }
+    p {
+      line-height: 2rem;
+    }
+    h1,
+    h2 {
+      text-align: center;
+    }
+  }
+</style>

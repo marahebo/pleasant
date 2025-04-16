@@ -2,18 +2,20 @@
 const { products } = Astro.props;
 ---
 
-<div class="slider-wrapper">
-  {
-    products.map((product) => (
-      <div class="product-slide" key={product.id}>
-        <img src={product.image} alt={product.name} />
-        <h2>{product.name}</h2>
-        <p>{product.price} kr</p>
-        <button class="add-to-cart-btn">Tilføj til kurv</button>
-      </div>
-    ))
-  }
-</div>
+<a href="/singleview">
+  <div class="slider-wrapper">
+    {
+      products.map((product) => (
+        <div class="product-slide" key={product.id}>
+          <img src={product.image} alt={product.name} />
+          <h2>{product.name}</h2>
+          <p>{product.price} kr</p>
+          <button class="add-to-cart-btn">Tilføj til kurv</button>
+        </div>
+      ))
+    }
+  </div>
+</a>
 
 <style>
   :root {
@@ -75,6 +77,10 @@ const { products } = Astro.props;
 
   .product-slide:hover .add-to-cart-btn {
     opacity: 1;
+  }
+  a {
+    all: unset;
+    cursor: pointer;
   }
 
   @media (min-width: 768px) {
