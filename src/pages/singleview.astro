@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
 import Productcard from "../components/productcard.astro";
 import Footer from "../components/footer.astro";
+import Hvorforpleasant from "../components/hvorforpleasant.astro";
 
 const curl =
   "https://sfmqbipvztwmykdsygxb.supabase.co/rest/v1/products?select=*";
@@ -19,6 +20,20 @@ console.log(data);
 
 <Layout>
   <Header />
-  {data.map((product) => <Productcard {product} />)}
+  <a href="/"> <p class="back">← Tilbage</p> </a>
+  <Productcard />
+
+  <Hvorforpleasant />
   <Footer />
 </Layout>
+
+<style>
+  .back {
+    padding-left: 3rem;
+    font-size: 1rem;
+  }
+  a {
+    all: unset;
+    cursor: pointer;
+  }
+</style>
