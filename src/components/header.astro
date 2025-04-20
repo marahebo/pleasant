@@ -93,12 +93,7 @@
 </section>
 <!-- MOBIL HEADER -->
 <section class="mobil">
-  <header>
-    <div class="logo">
-      <a href="/">
-        <img src="/img/logo.webp" alt="Pleasant logo" />
-      </a>
-    </div>
+  <header class="mobile-header">
     <div class="burger-menu">
       <button class="burger-icon">&#9776;</button>
     </div>
@@ -185,7 +180,16 @@
           <img src="/img/tiktokheader.webp" alt="TikTok" />
         </a>
       </div>
-      <!-- Text to display inside the burger menu -->
+    </div>
+
+    <div class="logo">
+      <a href="/">
+        <img src="/img/logo.webp" alt="Pleasant logo" />
+      </a>
+    </div>
+    <div class="søgkurv">
+      <img class="søg" src="/img/søg.webp" alt="" />
+      <img class="kurv" src="/img/kurv.webp" alt="" />
     </div>
   </header>
 </section>
@@ -376,11 +380,13 @@
       display: flex;
       align-items: center;
       position: relative;
-      padding: 25px;
+      padding-inline: 20px;
+      padding-bottom: 8px;
+      padding-top: 15px;
     }
 
     .burger-icon {
-      font-size: 50px;
+      font-size: 40px;
       cursor: pointer;
       background: none;
       border: none;
@@ -389,13 +395,17 @@
 
     .logo img {
       max-width: 100%;
-      height: 50px;
+      height: 30px;
     }
-
     .menu {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition:
+        max-height 0.5s ease,
+        opacity 0.5s ease;
       position: absolute;
-      top: 5.8rem;
+      top: 4rem;
       left: 0;
       width: 100%;
       background-color: var(--color-blue);
@@ -403,8 +413,42 @@
       z-index: 10;
     }
 
+    /* Når menuen er aktiv */
     .menu.active {
-      display: block;
+      max-height: 1000px; /* stort nok til alt indhold */
+      opacity: 1;
+    }
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding-inline: 20px;
+      padding-bottom: 8px;
+      padding-top: 15px;
+    }
+
+    .mobile-header .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mobile-header .søgkurv {
+      display: flex;
+      gap: 10px;
+    }
+
+    .søg,
+    .kurv {
+      width: 35px;
+      height: auto;
+      transition: 0.5s ease;
+    }
+
+    .søg:hover,
+    .kurv:hover {
+      transform: scale(1.1);
     }
   }
 </style>

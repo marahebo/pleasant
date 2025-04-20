@@ -1,0 +1,61 @@
+<article class="mobil">
+  <h1>Se hele kampangen lige her</h1>
+  <img src="/img/thysplit2.webp" alt="" />
+</article>
+
+<article class="desktop">
+  <img src="/img/thysplitdesktop.webp" alt="" />
+  <h1>Se hele kampangen lige her</h1>
+</article>
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+  img {
+    width: 80%;
+  }
+
+  h1 {
+    position: relative;
+    cursor: pointer;
+  }
+
+  h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: width 0.4s ease;
+  }
+
+  h1:hover::after {
+    width: 100%;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  @media (min-width: 660px) {
+    .desktop {
+      display: flex;
+    }
+
+    .mobil {
+      display: none;
+    }
+
+    h1 {
+      right: 25%;
+      bottom: 8rem;
+      font-size: 1.5rem;
+    }
+  }
+</style>
